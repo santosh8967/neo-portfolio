@@ -1,24 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import { NavbarContainer } from './styles/NavbarStyles'; // Adjust the path accordingly
+import { HeroContainer } from './styles/HeroStyles'; // Adjust the path accordingly
+import { AboutContainer } from './styles/AboutStyles'; // Adjust the path accordingly
+import { ContactContainer } from './styles/ContactStyles'; // Adjust the path accordingly
+import { FooterContainer } from './styles/FooterStyles'; // Adjust the path accordingly
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <NavbarContainer>
+          <Navbar />
+        </NavbarContainer>
+        <Routes>
+          <Route path="/" element={<HeroContainer><Hero /></HeroContainer>} />
+          <Route path="/about" element={<AboutContainer><About /></AboutContainer>} />
+          <Route path="/contact" element={<ContactContainer><Contact /></ContactContainer>} />
+        </Routes>
+        <FooterContainer>
+          <Footer />
+        </FooterContainer>
+      </div>
+    </Router>
   );
 }
 
