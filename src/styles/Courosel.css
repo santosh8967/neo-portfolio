@@ -1,0 +1,25 @@
+/* Courosel.css */
+.courosel-parent {
+  height: 100vh;
+  width: 100%;
+  background-color: #05386B; /* Dark blue background color */
+  color: #5CDB95; /* Light green text color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.courosel-parent:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(45deg, #379683, #05386B); /* Gradient from teal to dark blue */
+  transform: rotateX(45deg);
+  z-index: -1;
+}

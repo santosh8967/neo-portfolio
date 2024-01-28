@@ -5,11 +5,13 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import { NavbarContainer } from './styles/NavbarStyles'; // Adjust the path accordingly
-import { HeroContainer } from './styles/HeroStyles'; // Adjust the path accordingly
-import { AboutContainer } from './styles/AboutStyles'; // Adjust the path accordingly
-import { ContactContainer } from './styles/ContactStyles'; // Adjust the path accordingly
-import { FooterContainer } from './styles/FooterStyles'; // Adjust the path accordingly
+import Projects from './components/Projects';
+import { NavbarContainer } from './styles/NavbarStyles';
+import { HeroContainer } from './styles/HeroStyles';
+import { AboutContainer } from './styles/AboutStyles';
+import { ContactContainer } from './styles/ContactStyles';
+import { FooterContainer } from './styles/FooterStyles';
+import { ProjectsContainer } from './styles/ProjectsStyles'; // Add this line
 
 const App = () => {
   return (
@@ -22,6 +24,7 @@ const App = () => {
           <Route path="/" element={<HeroContainer><Hero /></HeroContainer>} />
           <Route path="/about" element={<AboutContainer><About /></AboutContainer>} />
           <Route path="/contact" element={<ContactContainer><Contact /></ContactContainer>} />
+          <Route path="/projects" element={<ProjectsContainer><Projects /></ProjectsContainer>} /> {/* Add this line */}
         </Routes>
         <FooterContainer>
           <Footer />
